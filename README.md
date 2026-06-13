@@ -139,4 +139,85 @@ This repository currently contains the firmware source code for the controller. 
 
 ## License
 
-This project is licensed under the MIT License. See `LICENSE` for details.
+This project is licensed uthe MIT License. See `LICENSE` for details.
+
+
+
+
+
+
+
+
+89696969
+
+
+
+
+
+
+
+
+
+
+你的项目是什么
+我们做的项目是一个帆船控制器，他用一个3D打印的帆船模型，完全模拟了帆船在海上航行时的推舵拉舵。我们的帆船控制器用了M5Stack Atom 作为主控，上面的LED等可以显示不同的状态，如：蓝牙连接、开始游戏、开始校正等，每个M5Stack ChainAngle Sensor 都套了一个3D打印的帆船壳子，M5Stack ChainAngle Sensor则作为船舵，读取数据，转换成电脑按键操控Tactical Sailing。
+
+
+如何使用
+1.LED
+红灯常亮：游戏模式开启，会根据旋钮发送按键
+红灯闪烁：蓝牙未连接 / 等待连接
+绿灯闪烁：角度归零/校准模式
+绿灯短亮：退出校准成功
+蓝灯：刚启动或刚连接后的状态提示
+暗绿灯：蓝牙已连接但未进入游戏模式，可以将页面转换成Tactial Sailing。
+ 2.按键
+短按：开启/关闭游戏模式
+长按 5 秒：进入角度归零/校准模式
+校准模式中双击：保存当前角度为中心点，并退出校准
+长按 10 秒：清除蓝牙配对并重启，重新配对
+3.提示
+旋钮越接近中心越亮
+偏离越大越暗
+最低保持 20% 亮度
+
+
+它做什么
+——他可以模拟Tactical Sailing中的小船
+——他可以通过实体的旋钮操纵屏幕中的小船
+——他有游戏模式、校准模式，蓝牙连接模式
+——他可以校准小船的中心位置
+——他可以连接2条小船，让两人同时在电脑上玩帆船游戏
+
+它为什么存在
+我平时会周末去香港当帆船裁判，所以经常会接触帆船相关的事物，就想到可以做这样一款帆船控制起来帮助那些帆船俱乐部的人招生，在俱乐部的门口摆一个大屏幕，放着一些椅子，那些路过的小朋友就可以坐在那里，用小船的遥控器来操控电脑上的船，让它左右方向移动。这样还可以稍微了解一下帆船是怎么行驶的，对帆船更感兴趣。而且，当帆船俱乐部的人在下雨天时，就可以靠这个来练习帆船，学习规则，是一款非常好的教学学具！
+
+
+
+What your project is
+你的项目是什么
+What it does  它做什么
+Why it exists  它为什么存在
+If they have to open even a single file, your README is not doing its job. At minimum, your README.md file must include:
+如果他们必须打开单个文件，你的 README 文件就没有做好本职工作。至少，你的 README.md 文件必须包含：
+
+1. Explanation of what your project is
+1. 解释你的项目是什么
+
+Short description of what your project is! Highlight what makes it unique
+   简要描述你的项目是什么！突出它的独特之处
+How do you use it? Be detailed! Others can’t read your mind.
+    
+Why did you make it? Be personal! Are you solving a problem? Trying to make something smaller than previously thought possible?
+   你为什么要做这个？要个性！你在解决一个问题吗？试图创造比之前认为可能更小的事物吗？
+2. Add images! A picture is worth a thousand words. Include:
+2. 添加图片！一图胜千言。包括：
+
+✓ Screenshots of a full 3D model of your project fully assembled
+  你项目完整组装好的 3D 模型截图
+✓ Screenshots of your PCB with components, if you have one
+  如果你有 PCB，请提供带有元件的 PCB 截图
+✓ A clear wiring diagram, if you’re not using a PCB
+  如果你不用 PCB，需要一张清晰的接线图
+✓ Anything else that makes it clear what your project is and what it’s for
+✓ 任何其他能清晰表明你的项目是什么以及它的用途的内容
