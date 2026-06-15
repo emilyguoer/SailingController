@@ -1,0 +1,7 @@
+Item,Description,Quantity,Unit Cost (RMB),Total Cost (RMB),Source Link,Notes
+M5Stack Chain Angle,Chain Angle sensor for rudder/knob input,2,29,58,https://shop.m5stack.com/products/chain-angle-stm32g031,One sensor per boat controller
+M5Stack Atom Basic / Atom Lite,ESP32 main controller,1,79,79,https://shop.m5stack.com/products/atom-lite-esp32-development-kit,Used as the BLE keyboard controller
+M5Stack HY2.0-4P data cable,Data cable between Atom and Chain Angle modules,2,10,20,https://shop.m5stack.com/products/grove-y-cable-20cm-5pcs,Use matching M5Stack Grove/HY2.0-4P cable
+3D printed boat shell,Custom printed boat body and controller enclosure,1,0,0,https://cad.onshape.com/documents/45688ab7d551252db4da506c/w/4661672f9ede1a1bb0420ff5/e/e09c4bf824f8c0160060557d?renderMode=0&uiState=6a2e347e7fbd1312f954f26b,Self-printed with existing filament
+3D printed rudder/knob/linkage,Custom printed steering parts for the Chain Angle sensor,1,0,0,https://cad.onshape.com/documents/45688ab7d551252db4da506c/w/4661672f9ede1a1bb0420ff5/e/e09c4bf824f8c0160060557d?renderMode=0&uiState=6a2e347e7fbd1312f954f26b,Self-printed with existing filament
+Total,,,,157,,Total estimated project cost in RMB

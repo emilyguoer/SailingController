@@ -1,12 +1,14 @@
 ## 你的项目是什么
 我们做的项目是一个帆船控制器，他用一个3D打印的帆船模型，完全模拟了帆船在海上航行时的推舵拉舵。我们的帆船控制器用了M5Stack Atom 作为主控，上面的LED等可以显示不同的状态，如：蓝牙连接、开始游戏、开始校正等，每个M5Stack ChainAngle Sensor 都套了一个3D打印的帆船壳子
 
-<img src="屏幕截图 2026-06-13 103052.png" width="400">  <img src="图片内容 (1).png" width="300">  
+<img src="assets/cad-assembly.png" width="400">  <img src="assets/printed-boat-top.png" width="300">  
 
 
 M5Stack ChainAngle Sensor则作为船舵，读取数据，转换成电脑按键操控Tactical Sailing。
 
-<img src="_cgi-bin_mmwebwx-bin_webwxgetmsgimg__&MsgID=4218156565938351282&skey=@crypt_dce1d0d9_a20277cf3d30b18d119fc91e164c6ffd&mmweb_appid=wx_webfilehelper.jpg" width="300">  <img src=" _cgi-bin_mmwebwx-bin_webwxgetmsgimg__&MsgID=2688898167438331693&skey=@crypt_dce1d0d9_a20277cf3d30b18d119fc91e164c6ffd&mmweb_appid=wx_webfilehelper.jpg" width="300"> 
+<img src="assets/full-wiring-overview.jpg" width="400">  <img src="assets/chain-angle-front.jpg" width="300">  <img src="assets/wiring-chain-angle.jpg" width="300"> 
+
+M5Stack Chain Angle 使用 HY2.0-4P 接口链式连接，不需要单独接每个 GPIO 针脚。Atom Basic 接到第一个 Chain Angle，第一个 Chain Angle 的 OUT 再接到第二个 Chain Angle 的 IN；近景图里可以看到接口旁边的 G / 5V / TX / RX 标注。
 
 
 ## 如何使用
@@ -36,6 +38,12 @@ M5Stack ChainAngle Sensor则作为船舵，读取数据，转换成电脑按键�
 - 他可以校准小船的中心位置
 - 他可以连接2条小船，让两人同时在电脑上玩帆船游戏
 
+## 设计文件和物料
+- 物料清单：[BOM.csv](BOM.csv)
+- CAD 源文件：[Onshape 共享设计](https://cad.onshape.com/documents/45688ab7d551252db4da506c/w/4661672f9ede1a1bb0420ff5/e/e09c4bf824f8c0160060557d?renderMode=0&uiState=6a2e347e7fbd1312f954f26b)
+- STEP 文件：[cad/AllBoat.step](cad/AllBoat.step)
+- 固件源码：[src/main_tactical_sailing.cpp](src/main_tactical_sailing.cpp)
+
 ## 它为什么存在
 我平时会周末去香港当帆船裁判，所以经常会接触帆船相关的事物，就想到可以做这样一款帆船控制起来帮助那些帆船俱乐部的人招生，在俱乐部的门口摆一个大屏幕，放着一些椅子，那些路过的小朋友就可以坐在那里，用小船的遥控器来操控电脑上的船，让它左右方向移动。这样还可以稍微了解一下帆船是怎么行驶的，对帆船更感兴趣。而且，当帆船俱乐部的人在下雨天时，就可以靠这个来练习帆船，学习规则，是一款非常好的教学学具！  
-<video src="1772442291.mp4" controls style="width: 200px; max-width: 50%;"></video>  
+<video src="assets/demo.mp4" controls style="width: 200px; max-width: 50%;"></video>  
