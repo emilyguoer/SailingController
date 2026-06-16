@@ -57,3 +57,7 @@ I often work as a sailing race judge in Hong Kong on weekends, so I am around sa
 This makes sailing easier to understand and more fun to try. It can also be useful on rainy days, when sailing club members cannot go out on the water but still want to practice sailing rules and basic control ideas. I think it can be a fun and useful teaching tool for sailing.
 
 <video src="assets/demo.mp4" controls style="width: 200px; max-width: 50%;"></video>
+
+![Sailing Tactic Poster](assets/sailing-tactic-poster.png)
+
+[Demo video](assets/demo.mp4)
