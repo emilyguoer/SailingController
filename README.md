@@ -1,49 +1,59 @@
-## 你的项目是什么
-我们做的项目是一个帆船控制器，他用一个3D打印的帆船模型，完全模拟了帆船在海上航行时的推舵拉舵。我们的帆船控制器用了M5Stack Atom 作为主控，上面的LED等可以显示不同的状态，如：蓝牙连接、开始游戏、开始校正等，每个M5Stack ChainAngle Sensor 都套了一个3D打印的帆船壳子
+## What is this project?
 
-<img src="assets/cad-assembly.png" width="400">  <img src="assets/printed-boat-top.png" width="300">  
+This project is a sailing boat controller. It uses a 3D printed boat model to simulate the rudder movement of a real sailing boat. The controller uses an M5Stack Atom as the main controller. Its built-in LED shows different states, such as Bluetooth connection, game mode, and calibration mode. Each M5Stack Chain Angle sensor is mounted inside a 3D printed boat shell.
 
+<img src="assets/cad-assembly.png" width="400">  <img src="assets/printed-boat-top.png" width="300">
 
-M5Stack ChainAngle Sensor则作为船舵，读取数据，转换成电脑按键操控Tactical Sailing。
+The M5Stack Chain Angle sensors work as the boat rudders. They read the rudder angle and convert the movement into keyboard inputs for Tactical Sailing.
 
-<img src="assets/full-wiring-overview.jpg" width="400">  <img src="assets/chain-angle-front.jpg" width="300">  <img src="assets/wiring-chain-angle.jpg" width="300"> 
+<img src="assets/full-wiring-overview.jpg" width="400">  <img src="assets/chain-angle-front.jpg" width="300">  <img src="assets/wiring-chain-angle.jpg" width="300">
 
-M5Stack Chain Angle 使用 HY2.0-4P 接口链式连接，不需要单独接每个 GPIO 针脚。Atom Basic 接到第一个 Chain Angle，第一个 Chain Angle 的 OUT 再接到第二个 Chain Angle 的 IN；近景图里可以看到接口旁边的 G / 5V / TX / RX 标注。
+The M5Stack Chain Angle modules connect through the HY2.0-4P chain interface, so I do not need to wire each GPIO pin manually. The Atom Basic connects to the first Chain Angle module, then the OUT port of the first Chain Angle connects to the IN port of the second Chain Angle. The close-up photo shows the G / 5V / TX / RX labels next to the connector.
 
+## How to use it
 
-## 如何使用
-### 1. LED 
-- 红色常亮：游戏模式开启，会发送按键
-- 黄色闪烁：蓝牙未连接 / 等待连接
-- 紫色闪烁：角度归零/校准模式
-- 青色短亮：退出校准成功
-- 蓝色：刚连接蓝牙后的提示状态
-- 青绿色：蓝牙已连接，但游戏模式关闭
-- 白色短亮：准备清除配对并重启
- ### 2. 按键
-- 短按：开启/关闭游戏模式
-- 长按 5 秒：进入角度归零/校准模式
-- 校准模式中双击：保存当前角度为中心点，并退出校准
-- 长按 10 秒：清除蓝牙配对并重启，重新配对
-### 3. 提示
-- 旋钮越接近中心越亮
-- 偏离越大越暗
-- 最低保持 20% 亮度
+### 1. LED states
 
+- Solid red: game mode is on and the controller is sending keyboard inputs
+- Blinking yellow: Bluetooth is not connected / waiting for connection
+- Blinking purple: angle zeroing / calibration mode
+- Short cyan flash: calibration saved and exited successfully
+- Blue: status indicator right after Bluetooth connects
+- Teal: Bluetooth is connected, but game mode is off
+- Short white flash: preparing to clear Bluetooth pairing and restart
 
-## 它做什么
-- 他可以模拟Tactical Sailing中的小船
-- 他可以通过实体的旋钮操纵屏幕中的小船
-- 他有游戏模式、校准模式，蓝牙连接模式
-- 他可以校准小船的中心位置
-- 他可以连接2条小船，让两人同时在电脑上玩帆船游戏
+### 2. Button controls
 
-## 设计文件和物料
-- 物料清单：[BOM.csv](BOM.csv)
-- CAD 源文件：[Onshape 共享设计](https://cad.onshape.com/documents/45688ab7d551252db4da506c/w/4661672f9ede1a1bb0420ff5/e/e09c4bf824f8c0160060557d?renderMode=0&uiState=6a2e347e7fbd1312f954f26b)
-- STEP 文件：[cad/AllBoat.step](cad/AllBoat.step)
-- 固件源码：[src/main_tactical_sailing.cpp](src/main_tactical_sailing.cpp)
+- Short press: turn game mode on or off
+- Hold for 5 seconds: enter angle zeroing / calibration mode
+- Double click during calibration mode: save the current angle as the center point and exit calibration
+- Hold for 10 seconds: clear Bluetooth pairing and restart for re-pairing
 
-## 它为什么存在
-我平时会周末去香港当帆船裁判，所以经常会接触帆船相关的事物，就想到可以做这样一款帆船控制起来帮助那些帆船俱乐部的人招生，在俱乐部的门口摆一个大屏幕，放着一些椅子，那些路过的小朋友就可以坐在那里，用小船的遥控器来操控电脑上的船，让它左右方向移动。这样还可以稍微了解一下帆船是怎么行驶的，对帆船更感兴趣。而且，当帆船俱乐部的人在下雨天时，就可以靠这个来练习帆船，学习规则，是一款非常好的教学学具！  
-<video src="assets/demo.mp4" controls style="width: 200px; max-width: 50%;"></video>  
+### 3. Angle feedback
+
+- The closer the knob is to the center, the brighter the light is
+- The farther it moves away from the center, the dimmer the light is
+- Brightness always stays at at least 20%
+
+## What does it do?
+
+- It can simulate boats in Tactical Sailing
+- It lets players control the boat on screen using a physical rudder/knob
+- It has game mode, calibration mode, and Bluetooth connection status
+- It can calibrate the center position of the boat rudder
+- It can connect two boat controllers, so two people can play the sailing game on one computer at the same time
+
+## Design files and BOM
+
+- Bill of Materials: [BOM.csv](BOM.csv)
+- CAD source file: [shared Onshape design](https://cad.onshape.com/documents/45688ab7d551252db4da506c/w/4661672f9ede1a1bb0420ff5/e/e09c4bf824f8c0160060557d?renderMode=0&uiState=6a2e347e7fbd1312f954f26b)
+- STEP file: [cad/AllBoat.step](cad/AllBoat.step)
+- Firmware source code: [src/main_tactical_sailing.cpp](src/main_tactical_sailing.cpp)
+
+## Why did I make it?
+
+I often work as a sailing race judge in Hong Kong on weekends, so I am around sailing a lot. That gave me the idea to build a physical sailing controller that could help sailing clubs introduce the sport to new people. A club could put a large screen near its entrance, set up a few chairs, and let children or visitors control the boats in a computer sailing game using these small physical boat controllers.
+
+This makes sailing easier to understand and more fun to try. It can also be useful on rainy days, when sailing club members cannot go out on the water but still want to practice sailing rules and basic control ideas. I think it can be a fun and useful teaching tool for sailing.
+
+<video src="assets/demo.mp4" controls style="width: 200px; max-width: 50%;"></video>
