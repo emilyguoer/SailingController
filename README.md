@@ -48,6 +48,7 @@ The M5Stack Chain Angle modules connect through the HY2.0-4P chain interface, so
 - Bill of Materials: [BOM.csv](BOM.csv)
 - CAD source file: [shared Onshape design](https://cad.onshape.com/documents/45688ab7d551252db4da506c/w/4661672f9ede1a1bb0420ff5/e/e09c4bf824f8c0160060557d?renderMode=0&uiState=6a2e347e7fbd1312f954f26b)
 - STEP file: [cad/AllBoat.step](cad/AllBoat.step)
+- Zine PDF: [assets/sailing-tactic-poster.pdf](assets/sailing-tactic-poster.pdf)
 - Firmware source code: [src/main_tactical_sailing.cpp](src/main_tactical_sailing.cpp)
 
 ## Why did I make it?
@@ -56,8 +57,8 @@ I often work as a sailing race judge in Hong Kong on weekends, so I am around sa
 
 This makes sailing easier to understand and more fun to try. It can also be useful on rainy days, when sailing club members cannot go out on the water but still want to practice sailing rules and basic control ideas. I think it can be a fun and useful teaching tool for sailing.
 
-<video src="assets/demo.mp4" controls style="width: 200px; max-width: 50%;"></video>
-
 ![Sailing Tactic Poster](assets/sailing-tactic-poster.png)
 
-[Demo video](assets/demo.mp4)
+## Demo video
+
+[Open the demo video](assets/demo.mp4)
