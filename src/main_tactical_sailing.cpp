@@ -462,6 +462,12 @@ void exitCalibrationMode() {
 
 void updateBleState() {
   bool connected = bleKeyboard.isConnected();
+  if (connected != lastBleConnected) {
+    Serial.printf("BLE state change: %s -> %s @%u\r\n",
+                  lastBleConnected ? "connected" : "disconnected",
+                  connected ? "connected" : "disconnected",
+                  millis());
+  }
   if (connected && !lastBleConnected) {
     bleEverConnected = true;
     bleConnectedAtMs = millis();
@@ -555,6 +561,7 @@ void setup() {
   printSensorScanResult("Boot scan");
   updateSensorStatusLeds();
 
+  Serial.println("BLE keyboard init");
   bleKeyboard.begin();
 }
 
